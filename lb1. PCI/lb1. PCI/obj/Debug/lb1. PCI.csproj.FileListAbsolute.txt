@@ -1,2 +1,10 @@
 C:\Users\Bobko\interfaces-and-peripheral-devices\lb1\lb1. PCI\lb1. PCI\bin\Debug\lb1.PCI.exe.config
 C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\bin\Debug\lb1.PCI.exe.config
+C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\obj\Debug\lb1. PCI.csprojResolveAssemblyReference.cache
+C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\obj\Debug\lb1.PCI.Form1.resources
+C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\obj\Debug\lb1.PCI.Properties.Resources.resources
+C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\obj\Debug\lb1. PCI.csproj.GenerateResource.Cache
+C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\bin\Debug\lb1.PCI.exe
+C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\bin\Debug\lb1.PCI.pdb
+C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\obj\Debug\lb1.PCI.exe
+C:\Users\Bobko\interfaces-and-peripheral-devices\lb1. PCI\lb1. PCI\obj\Debug\lb1.PCI.pdb

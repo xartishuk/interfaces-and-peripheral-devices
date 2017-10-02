@@ -16,5 +16,18 @@ namespace lb1.PCI
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            PCIApi pciApi = new PCIApi();
+            List<PCIDevice> devices = pciApi.GetPciDevices();
+            int i = 1;
+            foreach (var device in devices)
+            {
+                DeviceList.Items.Add(i++ + ". " + device.GetDeviceId());
+                DeviceList.Items.Add("    " + device.GetVendorId());
+                DeviceList.Items.Add("-----------------------------------------------------------");
+            }
+        }
     }
 }

@@ -28,12 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.DeviceList = new System.Windows.Forms.ListBox();
+            this.SuspendLayout();
+            // 
+            // DeviceList
+            // 
+            this.DeviceList.FormattingEnabled = true;
+            this.DeviceList.Location = new System.Drawing.Point(-1, 2);
+            this.DeviceList.Name = "DeviceList";
+            this.DeviceList.Size = new System.Drawing.Size(370, 407);
+            this.DeviceList.TabIndex = 0;
+            // 
+            // Form1
+            // 
+            this.ClientSize = new System.Drawing.Size(367, 412);
+            this.Controls.Add(this.DeviceList);
+            this.Name = "Form1";
+            this.Text = "PCI Viewer";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox DeviceList;
     }
 }
 
