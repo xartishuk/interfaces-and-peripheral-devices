@@ -14,7 +14,7 @@ namespace lb1.PCI
 
         private readonly static string DEVICE_ID_REGEXP_PATTERN = "DEV_.{4}";
 
-        private readonly static string VENDOR_ID_REGEXP_PATTERN = "VEN_.{4}";
+        private readonly static string VENDOR_ID_REGEXP_PATTERN = "VEN_.{4}"; 
 
         private readonly static string PCI_INFO_FILE = "pci.ids";
 
@@ -27,9 +27,9 @@ namespace lb1.PCI
             List<PCIDevice> pciDevices = new List<PCIDevice>();
 
             ManagementScope connectionScope = new ManagementScope();
-
             SelectQuery serialQuery = new SelectQuery(GET_PCI_DEVICES_QUERY);
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(connectionScope, serialQuery);
+
             Regex deviceIdRegExp = new Regex(DEVICE_ID_REGEXP_PATTERN);
             Regex vendorIdRegExp = new Regex(VENDOR_ID_REGEXP_PATTERN);
 
