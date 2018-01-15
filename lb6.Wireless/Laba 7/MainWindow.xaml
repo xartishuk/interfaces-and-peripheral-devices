@@ -1,0 +1,121 @@
+﻿<Window x:Class="Laba_7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laba_7"
+        xmlns:src="clr-namespace:Laba_7"
+        
+        mc:Ignorable="d"
+        Title="{Binding WindowTitle}" Height="350" Width="525">
+
+    <Grid Margin="10,0,10,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+
+        <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Height="35" Padding="5" Background="#4E87D4">
+            <Label VerticalAlignment="Center" Foreground="White" Content="{Binding H1Title}"/>
+        </Border>
+
+
+
+
+        <ListBox HorizontalContentAlignment="Stretch" ItemsSource="{Binding WifiNetworks}" Margin="0,5,0,10" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" SelectedItem="{Binding SelectedWiFiItem, Mode=TwoWay}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="2"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+
+
+                        <TextBlock Text="{Binding Name}" Grid.Column="0" />
+
+                        <TextBlock Text="{Binding Mac}" Grid.Column="1" />
+
+                        <Image Width="10" Grid.Column="2" VerticalAlignment="Center"
+                               Margin="10,5,10,5">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding IsConnected}" Value="False">
+                                            <Setter Property="Source" Value="C:\Users\admin\Documents\ИИпУ\Laba 6\Laba 6\Laba 6\disable.png"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding IsConnected}" Value="True">
+                                            <Setter Property="Source" Value="C:\Users\admin\Documents\ИИпУ\Laba 6\Laba 6\Laba 6\enable.png"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+
+
+                        <Image Width="10" Grid.Column="3" VerticalAlignment="Center"
+                               Margin="10,5,10,5">
+                            <Image.Style>
+                                <Style TargetType="{x:Type Image}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding HasProfile}" Value="False">
+                                            <Setter Property="Source" Value="C:\Users\admin\Documents\ИИпУ\Laba 6\Laba 6\Laba 6\disable.png"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding HasProfile}" Value="True">
+                                            <Setter Property="Source" Value="C:\Users\admin\Documents\ИИпУ\Laba 6\Laba 6\Laba 6\enable.png"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+
+
+                        <TextBlock Text="{Binding AuthAlgorithm}" Grid.Column="4" />
+
+                        <ProgressBar Value="{Binding Quality}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5"></ProgressBar>
+                        
+                    </Grid>
+
+                        
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <TextBlock Text="{Binding SelectedWiFiItem.Name}" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3"></TextBlock>
+        
+        <TextBox x:Name="SearchTermTextBox" Padding="5" Margin="0,0,10,0" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Grid.Column="0" Grid.Row="3"/>
+        <TextBlock IsHitTestVisible="False" Text="{Binding PasswordPlaceholder}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray"  Grid.Column="0" Grid.Row="3">
+            <TextBlock.Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBlock.Style>
+        </TextBlock>
+        <Button Click="connect_Click" Grid.ColumnSpan="2" Content="{Binding SendButtonText}" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Padding="0,5" Grid.Column="1" Grid.Row="3"/>
+
+
+    </Grid>
+</Window>
