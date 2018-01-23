@@ -24,8 +24,8 @@ Shoes.app title: 'CD/DVD', width: 520, height: 300 do
     `umount /dev/cdrom`
     `cdrecord -dev=/dev/cdrom -speed=16 -eject -v cdrom.iso`
     `cdrecord -dev=/dev/cdrom -v blank=fast`
-    `rm -Rf /home/h320r-2/IiPY/Laba7/1`
-    `mkdir 1`
+    `rm -Rf /home/artem/code/labs/files`
+    `mkdir files`
     alert('Done!')
   end
 end
