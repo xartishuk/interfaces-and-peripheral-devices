@@ -8,7 +8,7 @@ def refresh_list
     name = item.scan(/ESSID:.+/).first.sub("ESSID:", "").gsub(/"/, "")
     address = item.scan(/Address:.+/).first
     signal = item.scan(/Quality=[\w]+\/[\w]+/).first
-    aut = item.scan(/IE: [\/\.\w\s]+\n/).first
+    aut = item.scan(/IE: [\/\.\w\s]+\n/).first.chop + ' ' + item.scan(/Authentication Suites \(1\) : .+/).first.sub("Authentication Suites (1) : ", "")
     point = "#{name}   #{address}   #{signal}   #{aut}"
     @points.insert(-1, point)
   end
@@ -33,3 +33,4 @@ Shoes.app title: 'WI-FI', width: 600, height: 200 do
      end
    end
 end
+
