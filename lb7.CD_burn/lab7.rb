@@ -20,11 +20,11 @@ Shoes.app title: 'CD/DVD', width: 520, height: 300 do
     `cp "#{filename}" "#{now.delete("\n")}/files"`
   end
   @burned.click do
-    `mkisofs -V "volume_ID" -D -l -L -N -J -R -v -o cdrom.iso ~/code/labs/files/`
+    `mkisofs -V "volume_ID" -D -l -L -N -J -R -v -o cdrom.iso ~/interfaces-and-peripheral-devices/lb7.CD_burn/files/`
     `umount /dev/cdrom`
     `cdrecord -dev=/dev/cdrom -speed=16 -eject -v cdrom.iso`
     `cdrecord -dev=/dev/cdrom -v blank=fast`
-    `rm -Rf /home/artem/code/labs/files`
+    `rm -Rf /home/artem/interfaces-and-peripheral-devices/lb7.CD_burn/files`
     `mkdir files`
     alert('Done!')
   end
